@@ -1,1 +1,0 @@
-//!Colocar los estilos generales de la pagina, colores, fuentes, tamaños de fuente
