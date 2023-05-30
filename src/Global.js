@@ -1,5 +1,5 @@
 //!Colocar los estilos generales de la pagina, colores, fuentes, tamaños de fuente
-import Mostwasted from "./assets/Fuentes/Mostwasted.ttf"
+import Mostwasted from "./assets/fonts/Mostwasted.ttf"
 import { createGlobalStyle } from "styled-components"
 import styled from "styled-components"
 

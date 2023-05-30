@@ -1,16 +1,24 @@
 import GlobalStyle  from "./Global"
 import Header from "./components/Header/Header";
-import Banner from "./components/Banner/Banner";
 import Footer from "./components/Footer/Footer";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "./reset.css"
+import Home from "./pages/Home";
+import Page404 from "./pages/Page404";
+
+
+
 function App() {
   return (
-    <>
+    <Router>
     <GlobalStyle />
     <Header/>
-    <Banner/>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="*" element={<Page404/>}/>
+      </Routes>
     <Footer/>
-    </>
+    </Router>
   );
 }
 
