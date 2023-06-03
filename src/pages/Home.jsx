@@ -9,10 +9,7 @@ const StyledConetenedor = styled.section`
     flex-direction: column;
     padding:100px;
 `
-const StyledDiv = styled.span`
-    display:inline-flex;
-    padding:30px;
-`
+
 const Instagram = styled(Styledh3)`
     background: -webkit-linear-gradient(90deg, rgba(255,177,6,1) 0%, rgba(255,33,55,1) 50%, rgba(129,49,244,1) 100%);
     background-clip:text;
