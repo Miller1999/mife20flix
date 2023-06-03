@@ -20,7 +20,7 @@ export const EstiloBoton = styled.button`
     }
 `
 const Boton = (props) => {
-    return <EstiloBoton>{props.children}</EstiloBoton>
+    return <EstiloBoton type={props.type}>{props.children}</EstiloBoton>
 }
 
 export default Boton

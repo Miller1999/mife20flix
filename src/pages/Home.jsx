@@ -4,6 +4,7 @@ import { Styledh3,CategoriaTikTok,CategoriaYoutube,CambioColorInstagram,CambioCo
 import { Fragment } from "react";
 import Carrusel from "../components/Carrusel/Carrusel/Carrusel";
 
+
 const StyledConetenedor = styled.section`
     display:flex;
     flex-direction: column;
@@ -33,6 +34,7 @@ const TikTok = styled(Styledh3)`
 `
 
 const Home = () => {
+
     return(
         <Fragment>
         <Banner/>

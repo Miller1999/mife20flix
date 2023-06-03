@@ -3,13 +3,13 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import styled from 'styled-components';
 
 
-const ModDiv = styled.div`
+export const ModDiv = styled.div`
 
     width:80%;
     margin:20px;
     padding-bottom:20px;
 `
-const theme = createTheme({
+export const theme = createTheme({
     palette:{
         primary:{
             main: "#00A5CF"
@@ -19,7 +19,8 @@ const theme = createTheme({
         fontFamily:[
             "Raleway"
         ].join(","),
-        fontSize:20
+        fontSize:20,
+        color: "#fff"
     }
 })
 const CampoTexto = (props) => {
@@ -36,6 +37,8 @@ const CampoTexto = (props) => {
                 error={valid}
                 type={type}
                 helperText={helperText}
+                multiline
+                required
                 />
             </ThemeProvider>
         </ModDiv>

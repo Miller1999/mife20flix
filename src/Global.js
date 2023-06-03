@@ -13,6 +13,7 @@ export const ColorFondoHeader = "#010400"
 export const ColorFondo = "#6d7569"
 export const ColorLetras = "#FFFBFC"
 export const ColorResaltado = "#535950"
+export const ColorFormularios = "#2b2e2a"
 
 export const Fuente1 = createGlobalStyle`
     @font-face {

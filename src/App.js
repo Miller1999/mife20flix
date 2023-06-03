@@ -6,11 +6,11 @@ import "./reset.css"
 import Home from "./pages/Home";
 import Page404 from "./pages/Page404";
 import NuevoVideo from "./pages/NuevoVideo";
-
-
+import NuevaCategoria from "./pages/NuevaCategoria";
 
 
 function App() {
+
   return (
     <Router>
     <GlobalStyle />
@@ -18,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/NuevoVideo" element={<NuevoVideo/>}/>
+        <Route path="/NuevaCategoria" element={<NuevaCategoria/>}/>
         <Route path="*" element={<Page404/>}/>
       </Routes>
     <Footer/>
