@@ -12,6 +12,7 @@ export const ColorSecundario = "#00A5CF"
 export const ColorFondoHeader = "#010400"
 export const ColorFondo = "#30332E"
 export const ColorLetras = "#FFFBFC"
+export const ColorResaltado = "#535950"
 
 export const Fuente1 = createGlobalStyle`
     @font-face {
@@ -23,11 +24,16 @@ export const Fuente1 = createGlobalStyle`
 const GlobalStyle = createGlobalStyle`
 body{
     background-color: ${ColorFondo};
+    font-family:"Raleway",sans;
 }
-
+`
+export const StyledDiv = styled.div`
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    padding:100px;
 `
 export const StyledP = styled.p`
-    font-family:"Raleway",sans;
     font-size: 1.5vw;
     color: ${ColorLetras}
 `

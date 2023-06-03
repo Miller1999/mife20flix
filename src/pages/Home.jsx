@@ -8,6 +8,7 @@ const StyledConetenedor = styled.section`
     display:flex;
     flex-direction: column;
     padding:100px;
+    gap:30px;
 `
 
 const Instagram = styled(Styledh3)`
@@ -39,8 +40,11 @@ const Home = () => {
             <Youtube>Youtube</Youtube> 
             <Carrusel Categoria="Youtube"/>
             <TikTok>TikTok</TikTok>
+            <Carrusel Categoria="TikTok"/>
             <Twitch>Twitch</Twitch>
+            <Carrusel Categoria="Twitch"/>
             <Instagram>Instagram</Instagram>
+            <Carrusel Categoria="Instagram"/>
         </StyledConetenedor>
         </Fragment>
     )

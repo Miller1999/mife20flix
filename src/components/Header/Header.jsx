@@ -3,6 +3,7 @@ import logo from "../../assets/img/Logo.png"
 import Logo from "../Logo/Logo"
 import Boton from "../Button/Boton"
 import React from "react"
+import { Link } from "react-router-dom"
 import { ColorFondoHeader, ColorPrimario } from "../../Global"
 
 const EstiloHeader = styled.header`
@@ -19,8 +20,8 @@ const EstiloHeader = styled.header`
 const Header = () => {
     return(
         <EstiloHeader>
-            <Logo src={logo} alt="mife20flix"/>
-            <Boton>Nuevo video</Boton>
+            <Link to="/"><Logo src={logo} alt="mife20flix"/></Link>
+            <Link to="/NuevoVideo"><Boton>Nuevo video</Boton></Link>
         </EstiloHeader>
     )
 }

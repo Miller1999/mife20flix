@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "./reset.css"
 import Home from "./pages/Home";
 import Page404 from "./pages/Page404";
+import NuevoVideo from "./pages/NuevoVideo";
 
 
 
@@ -16,6 +17,7 @@ function App() {
     <Header/>
       <Routes>
         <Route path="/" element={<Home/>}/>
+        <Route path="/NuevoVideo" element={<NuevoVideo/>}/>
         <Route path="*" element={<Page404/>}/>
       </Routes>
     <Footer/>
