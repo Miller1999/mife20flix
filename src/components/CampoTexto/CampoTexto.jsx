@@ -1,11 +1,45 @@
 import TextField from '@mui/material/TextField';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import styled from 'styled-components';
 
 
+const ModDiv = styled.div`
 
-
-const CampoTexto = () => {
+    width:80%;
+    margin:20px;
+    padding-bottom:20px;
+`
+const theme = createTheme({
+    palette:{
+        primary:{
+            main: "#00A5CF"
+        }
+    },
+    typography:{
+        fontFamily:[
+            "Raleway"
+        ].join(","),
+        fontSize:20
+    }
+})
+const CampoTexto = (props) => {
+    const {type,label,valid,helperText} = props
     return(
-        <TextField id="filled-basic" label="Filled" variant="filled" size='normal' fullWidth/>
+        <ModDiv>
+            <ThemeProvider theme={theme}>
+                <TextField 
+                id="filled-basic" 
+                label={label} 
+                variant="filled" 
+                size='normal' 
+                fullWidth
+                error={valid}
+                type={type}
+                helperText={helperText}
+                />
+            </ThemeProvider>
+        </ModDiv>
+
     )
 }
 

@@ -10,7 +10,7 @@ export const CategoriaTwitch = "#a970ff"
 export const ColorPrimario = "#B905F0"
 export const ColorSecundario = "#00A5CF"
 export const ColorFondoHeader = "#010400"
-export const ColorFondo = "#30332E"
+export const ColorFondo = "#6d7569"
 export const ColorLetras = "#FFFBFC"
 export const ColorResaltado = "#535950"
 
@@ -23,7 +23,7 @@ export const Fuente1 = createGlobalStyle`
 
 const GlobalStyle = createGlobalStyle`
 body{
-    background-color: ${ColorFondo};
+    background: linear-gradient(180deg, rgba(144,155,139,1) 0%, rgba(48,52,46,1) 100%);;
     font-family:"Raleway",sans;
 }
 `
