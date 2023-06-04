@@ -24,7 +24,10 @@ export const theme = createTheme({
     }
 })
 const CampoTexto = (props) => {
-    const {type,label,valid,helperText} = props
+    const {type,label,valid,helperText,valor,setValue} = props
+    const cambio = (e) =>{
+        setValue(e.target.value)
+    }
     return(
         <ModDiv>
             <ThemeProvider theme={theme}>
@@ -39,6 +42,8 @@ const CampoTexto = (props) => {
                 helperText={helperText}
                 multiline
                 required
+                value={valor}
+                onChange={cambio}
                 />
             </ThemeProvider>
         </ModDiv>

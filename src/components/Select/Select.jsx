@@ -27,6 +27,10 @@ const Categoria = [
 ]
 
 const Selector = (props) => {
+    const {setValue,valor} = props
+    const cambio = (e)=> {
+        setValue(e.target.value)
+    }
     return(
         <ModDiv>
         <ThemeProvider theme={theme}>
@@ -36,6 +40,8 @@ const Selector = (props) => {
                 labelId="demo-simple-select-filled-label"
                 id="demo-simple-select-filled"
                 required
+                value={valor}
+                onChange={cambio}
                 >
                 {Categoria.map((categoria) => (
                     <MenuItem key={categoria.id} value={categoria.titulo}>{categoria.titulo}</MenuItem>
