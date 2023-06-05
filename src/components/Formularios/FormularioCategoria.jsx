@@ -4,21 +4,8 @@ import Boton from "../Button/Boton";
 import React from 'react'
 import { MuiColorInput } from 'mui-color-input'
 import { ColorFormularios, StyledP } from "../../Global";
+import { useState } from "react";
 
-const ColorPicker = () => {
-const [value, setValue] = React.useState('#ffffff')
-
-const handleChange = (newValue) => {
-    setValue(newValue)
-}
-
-return (
-    <DivModificado>
-        <ModP>Escoge el color de la categoria</ModP>
-        <MuiColorInput value={value} onChange={handleChange} />
-    </DivModificado>
-)
-}
 
 const DivModificado = styled.div`
     display:flex;
@@ -45,13 +32,54 @@ const ModP = styled(StyledP)`
     font-size:20px;
 `
 
-const FormularioCategoria = () => {
+const FormularioCategoria = (props) => {
+    const [value, setValue] = useState('#ffffff')
+    const [TituloC,setTituloC] = useState("") 
+    const [DescripcionC,setDescripcionC] = useState("")
+    const [codigoC,setCodigoC] = useState("")
+    const handleChange = (newValue) => {
+        setValue(newValue)
+    }
+    const ColorPicker = () => {
+        return (
+            <DivModificado>
+                <ModP>Escoge el color de la categoria</ModP>
+                <MuiColorInput value={value} onChange={handleChange} />
+            </DivModificado>
+        )
+        }
+        const envio = (e) => {
+            e.preventDefault()
+            let datos = {
+                value,
+                TituloC,
+                DescripcionC,
+                codigoC,
+            }
+            console.log(datos)
+        }
     return(
-        <StlyedForm>
-            <CampoTexto label="Nombre de la categoria" type="text" valid={null} helperText="Ingrese el nombre de la categoria"/>
-            <CampoTexto label="Descripcion" type="text" valid={null} helperText="Ingrese la descripcion de la categoria" />
+        <StlyedForm onSubmit={envio}>
+            <CampoTexto 
+            label="Nombre de la categoria" type="text" 
+            valid={null} 
+            valor={TituloC}
+            setValue={setTituloC}
+            helperText="Ingrese el nombre de la categoria"/>
+            <CampoTexto 
+            label="Descripcion" 
+            type="text" 
+            valid={null} 
+            valor={DescripcionC}
+            setValue={setDescripcionC}
+            helperText="Ingrese la descripcion de la categoria" />
             <ColorPicker/>
-            <CampoTexto label="Codigo de seguridad" type="number" valid={null} helperText="Ingrese el codigo de seguridad valido" />
+            <CampoTexto 
+            label="Codigo de seguridad" type="number" 
+            valor={codigoC}
+            valid={null} 
+            setValue={setCodigoC}
+            helperText="Ingrese el codigo de seguridad valido" />
             <HorizontalDiv>
                 <Boton type="submit">Guardar</Boton>
                 <Boton type="button">Limpiar</Boton>
