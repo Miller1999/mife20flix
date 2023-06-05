@@ -34,17 +34,42 @@ const ModP = styled(StyledP)`
 
 const FormularioCategoria = (props) => {
     const [value, setValue] = useState('#ffffff')
-    const [TituloC,setTituloC] = useState("") 
-    const [DescripcionC,setDescripcionC] = useState("")
-    const [codigoC,setCodigoC] = useState("")
+    const [TituloC,setTituloC] = useState({
+        value:"",
+        valid: null
+    }) 
+    const [DescripcionC,setDescripcionC] = useState({
+        value:"",
+        valid: null
+    })
+    const [codigoC,setCodigoC] = useState({
+        value:"",
+        valid: null
+    })
     const handleChange = (newValue) => {
         setValue(newValue)
     }
+        function validarNombre(nombre){
+        if(nombre.length <=3 ){
+            return  true
+        }
+        else{
+            return false
+        }
+    }
+    function CodigoValido(numero){
+        if(numero !== "1234"){
+            return false
+        }
+        else{
+            return true
+        }
+    }
     const limpiar = () => {
         setValue('#ffffff')
-        setCodigoC("")
-        setTituloC("")
-        setDescripcionC("")
+        setCodigoC({value:"",valid:false})
+        setTituloC({value:"",valid:false})
+        setDescripcionC({value:"",valid:false})
     }
     const ColorPicker = () => {
         return (
@@ -62,30 +87,54 @@ const FormularioCategoria = (props) => {
                 DescripcionC,
                 codigoC,
             }
-            console.log(datos)
+            if(codigoC.value === "1234"){
+                console.log(datos)
+            }
+            else{
+                console.log("codigo incorrecto")
+                console.log(codigoC)
+            }
         }
     return(
         <StlyedForm onSubmit={envio}>
             <CampoTexto 
-            label="Nombre de la categoria" type="text" 
-            valid={null} 
-            valor={TituloC}
+            label="Nombre de la categoria" 
+            type="text" 
             setValue={setTituloC}
-            helperText="Ingrese el nombre de la categoria"/>
+            valor={TituloC.value}
+            error={TituloC.valid}
+            helperText={TituloC.valid ? "Debe ser mayor a 3 caracteres" : ""}
+            onBlur={(e)=>{
+                const title = e.target.value
+                const valido = validarNombre(title)
+                setTituloC({value:title,valid:valido})
+            }}
+            />
             <CampoTexto 
             label="Descripcion" 
             type="text" 
-            valid={null} 
-            valor={DescripcionC}
             setValue={setDescripcionC}
-            helperText="Ingrese la descripcion de la categoria" />
+            valor={DescripcionC.value}
+            error={DescripcionC.valid}
+            helperText={DescripcionC.valid ? "Debe ser mayor a 3 caracteres" : ""}
+            onBlur={(e)=>{
+                const description = e.target.value
+                const valido = validarNombre(description)
+                setDescripcionC({value:description,valid:valido})
+            }}/>
             <ColorPicker/>
             <CampoTexto 
-            label="Codigo de seguridad" type="number" 
-            valor={codigoC}
-            valid={null} 
+            label="Codigo de seguridad" 
+            type="number" 
             setValue={setCodigoC}
-            helperText="Ingrese el codigo de seguridad valido" />
+            valor={codigoC.value}
+            error={!codigoC.valid}
+            helperText={!codigoC.valid ? "Codigo incorrecto" : ""}
+            onBlur={(e)=>{
+                const code = e.target.value
+                const valido = CodigoValido(code)
+                setCodigoC({value:code,valid:valido})
+            }}/>
             <HorizontalDiv>
                 <Boton type="submit">Guardar</Boton>
                 <Boton type="reset" onClick={limpiar}>Limpiar</Boton>

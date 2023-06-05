@@ -18,23 +18,65 @@ const StlyedForm = styled.form`
     align-items:center;
 `
 
-
-
 const FormularioVideo = (props) => {
-    const [Nombre,setNombre] = useState("")
-    const [url,setUrl] = useState("")
-    const [ImagenVideo,setImagen] = useState("")
+    //Declaraciones
+    const [Nombre,setNombre] = useState({
+        value:"",
+        valid: null
+    })
+    const [url,setUrl] = useState({
+        value:"",
+        valid: null
+    })
+    const [ImagenVideo,setImagen] = useState({
+        value:"",
+        valid: null
+    })
     const [Categoria,setCategoria] = useState("")
-    const [Descripcion,setDescripcion] = useState("")
-    const [Codigo,setCodigo] = useState("")
-    const limpiar = () => {
-        setNombre('')
-        setUrl("")
-        setImagen("")
-        setDescripcion("")
-        setCategoria("")
-        setCodigo("")
+    const [Descripcion,setDescripcion] = useState({
+        value:"",
+        valid: null
+    })
+    const [Codigo,setCodigo] = useState({
+        value:"",
+        valid: null
+    })
+//Validaciones
+    function validarNombre(nombre){
+        if(nombre.length <=3 ){
+            return  true
+        }
+        else{
+            return false
+        }
     }
+    function CodigoValido(numero){
+        if(numero !== "1234"){
+            return false
+        }
+        else{
+            return true
+        }
+    }
+    function URLvalida(url){
+        try{
+            new URL(url)
+            return (true)
+        }
+        catch{
+            return (false)
+        }
+    }
+//Limpiar campos
+    const limpiar = () => {
+        setNombre({value:"",valid:false})
+        setUrl({value:"",valid:false})
+        setImagen({value:"",valid:false})
+        setDescripcion({value:"",valid:false})
+        setCategoria("")
+        setCodigo({value:"",valid:false})
+    }
+//Enviar info
     const envio = (e) => {
         e.preventDefault()
         let datos = {
@@ -45,49 +87,93 @@ const FormularioVideo = (props) => {
             Descripcion,
             Codigo
         }
-        console.log(datos)
+        if(Codigo.value === "1234"){
+            console.log(datos)
+        }
+        else{
+            console.log("codigo incorrecto")
+            console.log(Codigo)
+        }
     }
+
     return(
         <StlyedForm onSubmit={envio}>
             <CampoTexto 
+            id="Nombre"
             label="Titulo del video" 
             type="text" 
-            valid={null} 
-            valor={Nombre}
+            valor={Nombre.value}
             setValue={setNombre}
-            helperText="Debe ingresar el titulo del video"/>
+            error={Nombre.valid}
+            helperText={Nombre.valid ? "Debe ser mayor a 3 caracteres" : ""}
+            onBlur={(e)=>{
+                const name = e.target.value
+                const valido = validarNombre(name)
+                setNombre({value:name,valid:valido})
+            }}
+            />
             <CampoTexto 
+            id="url"
             label="Link del video" 
-            type="url" 
-            valid={null} 
-            valor={url}
+            type="text" 
+            valor={url.value}
             setValue={setUrl}
-            helperText="Ingrese una URL valida"/>
+            error={!url.valid}
+            helperText={!url.valid ? "Ingrese una URL valida" : ""}
+            onBlur={(e)=>{
+                const url = e.target.value
+                const valido = URLvalida(url)
+                setUrl({value:url,valid:valido})
+            }}
+            />
             <CampoTexto 
+            id="imagen"
             label="Link imagen del video" 
             type="url" 
-            valor={ImagenVideo}
-            valid={null} 
+            valor={ImagenVideo.value}
             setValue={setImagen}
-            helperText="Ingrese una URL valida"/>
+            error={!ImagenVideo.valid}
+            helperText={!ImagenVideo.valid ? "Ingrese una URL valida" : ""}
+            onBlur={(e)=>{
+                const imagen = e.target.value
+                const valido = URLvalida(imagen)
+                setImagen({value:imagen,valid:valido})
+            }}
+            />
             <Selector
+            id="categoria"
             valor={Categoria}
             setValue={setCategoria}
             />
             <CampoTexto 
+            id="descripcion"
             label="Descripcion" 
             type="text" 
-            valid={null} 
             setValue={setDescripcion}
-            valor={Descripcion}
-            helperText="Ingrese la descripcion del video" />
+            valor={Descripcion.value}
+            error={Descripcion.valid}
+            helperText={Descripcion.valid ? "Debe ser mayor a 3 caracteres" : ""}
+            onBlur={(e)=>{
+                const description = e.target.value
+                const valido = validarNombre(description)
+                setDescripcion({value:description,valid:valido})
+            }}
+            />
             <CampoTexto 
+            id="codigo"
             label="Codigo de seguridad" 
-            type="number" 
-            valor={Codigo}
-            valid={null} 
+            type="number"
+            valor={Codigo.value}
             setValue={setCodigo}
-            helperText="Ingrese el codigo de seguridad valido" />
+            error={!Codigo.valid}
+            helperText={!Codigo.valid ? "Codigo incorrecto" : ""}
+            onBlur={(e)=>{
+                const code = e.target.value
+                const valido = CodigoValido(code)
+                setCodigo({value:code,valid:valido})
+            }}
+            />
+
             <HorizontalDiv>
                 <Boton type="submit">Guardar</Boton>
                 <Boton type="reset" onClick={limpiar}>Limpiar</Boton>

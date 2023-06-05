@@ -24,7 +24,7 @@ export const theme = createTheme({
     }
 })
 const CampoTexto = (props) => {
-    const {type,label,valid,helperText,valor,setValue} = props
+    const {type,label,helperText,valor,setValue,id,error,onBlur,InputProps} = props
     const cambio = (e) =>{
         setValue(e.target.value)
     }
@@ -32,18 +32,20 @@ const CampoTexto = (props) => {
         <ModDiv>
             <ThemeProvider theme={theme}>
                 <TextField 
-                id="filled-basic" 
+                id={id}
                 label={label} 
                 variant="filled" 
                 size='normal' 
                 fullWidth
-                error={valid}
+                error={error}
                 type={type}
                 helperText={helperText}
                 multiline
                 required
                 value={valor}
                 onChange={cambio}
+                onBlur={onBlur}
+                InputProps={InputProps}
                 />
             </ThemeProvider>
         </ModDiv>
