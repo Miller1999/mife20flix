@@ -40,6 +40,12 @@ const FormularioCategoria = (props) => {
     const handleChange = (newValue) => {
         setValue(newValue)
     }
+    const limpiar = () => {
+        setValue('#ffffff')
+        setCodigoC("")
+        setTituloC("")
+        setDescripcionC("")
+    }
     const ColorPicker = () => {
         return (
             <DivModificado>
@@ -50,7 +56,7 @@ const FormularioCategoria = (props) => {
         }
         const envio = (e) => {
             e.preventDefault()
-            let datos = {
+            var datos = {
                 value,
                 TituloC,
                 DescripcionC,
@@ -82,7 +88,7 @@ const FormularioCategoria = (props) => {
             helperText="Ingrese el codigo de seguridad valido" />
             <HorizontalDiv>
                 <Boton type="submit">Guardar</Boton>
-                <Boton type="button">Limpiar</Boton>
+                <Boton type="reset" onClick={limpiar}>Limpiar</Boton>
             </HorizontalDiv>
         </StlyedForm>
     )

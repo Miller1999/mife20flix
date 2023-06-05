@@ -27,7 +27,14 @@ const FormularioVideo = (props) => {
     const [Categoria,setCategoria] = useState("")
     const [Descripcion,setDescripcion] = useState("")
     const [Codigo,setCodigo] = useState("")
-
+    const limpiar = () => {
+        setNombre('')
+        setUrl("")
+        setImagen("")
+        setDescripcion("")
+        setCategoria("")
+        setCodigo("")
+    }
     const envio = (e) => {
         e.preventDefault()
         let datos = {
@@ -83,7 +90,7 @@ const FormularioVideo = (props) => {
             helperText="Ingrese el codigo de seguridad valido" />
             <HorizontalDiv>
                 <Boton type="submit">Guardar</Boton>
-                <Boton type="button">Limpiar</Boton>
+                <Boton type="reset" onClick={limpiar}>Limpiar</Boton>
                 <Link to="/NuevaCategoria"><Boton type="button">Nueva Categoria</Boton></Link> 
             </HorizontalDiv>
         </StlyedForm>
