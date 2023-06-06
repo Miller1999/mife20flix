@@ -58,10 +58,11 @@ const Carrusel = (props) => {
             {ListaYoutube.map((item) => {
                 return(
                     <Fragment key={item.id}>
-                        <ContainerVideoCardH>
+                        <a href={item.url} target="_blank"> <ContainerVideoCardH>
                             <StyledVideoCardH src={item.Imagenvideo} alt={item.Nombre}/>
                             <Pshort>{item.Nombre}</Pshort>
                         </ContainerVideoCardH>
+                        </a>
                     </Fragment>
                 )
             })}
@@ -74,10 +75,11 @@ const Carrusel = (props) => {
             {ListaTwitch.map((item) => {
                 return(
                     <Fragment key={item.id}>
-                        <ContainerVideoCardH>
+                        <a href={item.url} target="_blank"> <ContainerVideoCardH>
                             <StyledVideoCardH src={item.Imagenvideo} alt={item.Nombre}/>
                             <Pshort>{item.Nombre}</Pshort>
                         </ContainerVideoCardH>
+                        </a>
                     </Fragment>
                 )
             })}
@@ -90,10 +92,11 @@ const Carrusel = (props) => {
             {ListaTikTok.map((item) => {
                 return(
                     <Fragment key={item.id}>
-                        <ContainerVideoCardV>
+                    <a href={item.url} target="_blank"> <ContainerVideoCardV>
                             <StyledVideoCardV src={item.Imagenvideo} alt={item.Nombre}/>
                             <Pshort>{item.Nombre}</Pshort>
                         </ContainerVideoCardV>
+                        </a>
                     </Fragment>
                 )
             })}
@@ -106,10 +109,11 @@ const Carrusel = (props) => {
             {ListaInstagram.map((item) => {
                 return(
                     <Fragment key={item.id}>
-                        <ContainerVideoCardV>
+                        <a href={item.url} target="_blank"> <ContainerVideoCardV>
                             <StyledVideoCardV src={item.Imagenvideo} alt={item.Nombre}/>
                             <Pshort>{item.Nombre}</Pshort>
                         </ContainerVideoCardV>
+                        </a>
                     </Fragment>
                 )
             })}

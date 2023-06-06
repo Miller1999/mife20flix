@@ -4,6 +4,8 @@ import Selector from "../Select/Select";
 import Boton from "../Button/Boton";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import Axios from "axios";
+import {v4 as uuid} from "uuid"
 
 const HorizontalDiv = styled.div`
     display:flex;
@@ -41,6 +43,7 @@ const FormularioVideo = (props) => {
         value:"",
         valid: null
     })
+
 //Validaciones
     function validarNombre(nombre){
         if(nombre.length <=3 ){
@@ -79,16 +82,73 @@ const FormularioVideo = (props) => {
 //Enviar info
     const envio = (e) => {
         e.preventDefault()
-        let datos = {
-            Nombre,
-            url,
-            ImagenVideo,
-            Categoria,
-            Descripcion,
-            Codigo
-        }
         if(Codigo.value === "1234"){
-            console.log(datos)
+            if(Categoria === "TikTok"){
+                const TikTok = async (id,Nombre,url,ImagenVideo,Descripcion) =>{
+                    const {TikTok} = await Axios.post(
+                        "http://localhost:5000/Tiktok",
+                        {
+                            id,
+                            Nombre,
+                            url,
+                            ImagenVideo,
+                            Descripcion
+                        }
+                    )
+                    console.log(TikTok)
+                }
+                TikTok(uuid(),Nombre.value,url.value,ImagenVideo.value,Descripcion.value)
+            }
+            if(Categoria === "Youtube"){
+                const Youtube = async (id,Nombre,url,ImagenVideo,Descripcion) =>{
+                    const {Youtube} = await Axios.post(
+                        "http://localhost:5000/Youtube",
+                        {
+                            id,
+                            Nombre,
+                            url,
+                            ImagenVideo,
+                            Descripcion
+                        }
+                    )
+                    console.log(Youtube)
+                }
+                Youtube(uuid(),Nombre.value,url.value,ImagenVideo.value,Descripcion.value)
+            }
+            if(Categoria === "Twitch"){
+                const Twitch = async (id,Nombre,url,ImagenVideo,Descripcion) =>{
+                    const {Twitch} = await Axios.post(
+                        "http://localhost:5000/Twitch",
+                        {
+                            id,
+                            Nombre,
+                            url,
+                            ImagenVideo,
+                            Descripcion
+                        }
+                    )
+                    console.log(Twitch)
+                }
+                Twitch(uuid(),Nombre.value,url.value,ImagenVideo.value,Descripcion.value)
+            }
+            if(Categoria === "Instagram"){
+                const Instagram = async (id,Nombre,url,ImagenVideo,Descripcion) =>{
+                    const {Instagram} = await Axios.post(
+                        "http://localhost:5000/Instagram",
+                        {
+                            id,
+                            Nombre,
+                            url,
+                            ImagenVideo,
+                            Descripcion
+                        }
+                    )
+                    console.log(Instagram)
+                }
+                Instagram(uuid(),Nombre.value,url.value,ImagenVideo.value,Descripcion.value)
+            }
+            console.log("Si fue enviado")
+            setInterval(()=>{window.location.href="http://localhost:3000/"},1000)
         }
         else{
             console.log("codigo incorrecto")
