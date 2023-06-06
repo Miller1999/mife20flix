@@ -85,14 +85,14 @@ const FormularioVideo = (props) => {
         e.preventDefault()
         if(Codigo.value === "1234"){
             if(Categoria === "TikTok"){
-                const TikTok = async (id,Nombre,url,ImagenVideo,Descripcion) =>{
+                const TikTok = async (id,Nombre,url,Imagenvideo,Descripcion) =>{
                     const {TikTok} = await Axios.post(
                         "http://localhost:5000/Tiktok",
                         {
                             id,
                             Nombre,
                             url,
-                            ImagenVideo,
+                            Imagenvideo,
                             Descripcion
                         }
                     )
@@ -101,14 +101,14 @@ const FormularioVideo = (props) => {
                 TikTok(uuid(),Nombre.value,url.value,ImagenVideo.value,Descripcion.value)
             }
             if(Categoria === "Youtube"){
-                const Youtube = async (id,Nombre,url,ImagenVideo,Descripcion) =>{
+                const Youtube = async (id,Nombre,url,Imagenvideo,Descripcion) =>{
                     const {Youtube} = await Axios.post(
                         "http://localhost:5000/Youtube",
                         {
                             id,
                             Nombre,
                             url,
-                            ImagenVideo,
+                            Imagenvideo,
                             Descripcion
                         }
                     )
@@ -117,14 +117,14 @@ const FormularioVideo = (props) => {
                 Youtube(uuid(),Nombre.value,url.value,ImagenVideo.value,Descripcion.value)
             }
             if(Categoria === "Twitch"){
-                const Twitch = async (id,Nombre,url,ImagenVideo,Descripcion) =>{
+                const Twitch = async (id,Nombre,url,Imagenvideo,Descripcion) =>{
                     const {Twitch} = await Axios.post(
                         "http://localhost:5000/Twitch",
                         {
                             id,
                             Nombre,
                             url,
-                            ImagenVideo,
+                            Imagenvideo,
                             Descripcion
                         }
                     )
