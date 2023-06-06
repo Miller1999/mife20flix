@@ -107,7 +107,7 @@ const FormularioCategoria = (props) => {
                 }
                 Categorias(uuid(),TituloC.value,DescripcionC.value,value)
                 console.log("Si fue enviado")
-                setInterval(()=>{window.location.href="http://localhost:3000/NuevaCategoria"},1000)
+                setInterval(()=>{window.location.href="https://mife20flix.vercel.app/NuevaCategoria"},1000)
             }
             else{
                 console.log("codigo incorrecto")

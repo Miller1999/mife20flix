@@ -149,7 +149,7 @@ const FormularioVideo = (props) => {
                 Instagram(uuid(),Nombre.value,url.value,ImagenVideo.value,Descripcion.value)
             }
             console.log("Si fue enviado")
-            setInterval(()=>{window.location.href="http://localhost:3000/"},1000)
+            setInterval(()=>{window.location.href="https://mife20flix.vercel.app/"},1000)
         }
         else{
             console.log("codigo incorrecto")
