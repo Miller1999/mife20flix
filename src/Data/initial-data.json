@@ -13,6 +13,13 @@
                     "Nombre":"ME HAS MIRADO A LOS OJOS...",
                     "Imagenvideo":"https://i.ytimg.com/an_webp/Vkqf4WGE5Ws/mqdefault_6s.webp?du=3000&sqp=CPXe1aMG&rs=AOn4CLAGqoaz0_-YH719z9MUSmyzVh1LCQ",
                     "url":"https://www.youtube.com/watch?v=Vkqf4WGE5Ws"
+                },
+                {
+                    "id" : 3, 
+                    "Subcategoria":"Alien: Isolation",
+                    "Nombre":"ME HAS MIRADO",
+                    "Imagenvideo":"https://i.ytimg.com/an_webp/Vkqf4WGE5Ws/mqdefault_6s.webp?du=3000&sqp=CPXe1aMG&rs=AOn4CLAGqoaz0_-YH719z9MUSmyzVh1LCQ",
+                    "url":"https://www.youtube.com/watch?v=Vkqf4WGE5Ws"
                 }
                 
             ],
@@ -21,6 +28,13 @@
                     "id":1,
                     "Subcategoria":"Valorant",
                     "Nombre": "Alguien dijo 13",
+                    "Imagenvideo":"https://p16-sign-va.tiktokcdn.com/tos-maliva-p-0068/oMeEQbh8wQcRnWjQBAIDACBJIBveIzv9jNHKEt~tplv-f5insbecw7-1:480:480.jpeg?x-expires=1685786400&x-signature=B8%2BrD%2BDs6UYlJNlL0FaRdA74JAk%3D",
+                    "url":"https://www.tiktok.com/@mife.20/video/7187201705807842566?is_from_webapp=1&sender_device=pc"
+                },
+                {
+                    "id":2,
+                    "Subcategoria":"Valorant",
+                    "Nombre": "Alguien dijo 12+1",
                     "Imagenvideo":"https://p16-sign-va.tiktokcdn.com/tos-maliva-p-0068/oMeEQbh8wQcRnWjQBAIDACBJIBveIzv9jNHKEt~tplv-f5insbecw7-1:480:480.jpeg?x-expires=1685786400&x-signature=B8%2BrD%2BDs6UYlJNlL0FaRdA74JAk%3D",
                     "url":"https://www.tiktok.com/@mife.20/video/7187201705807842566?is_from_webapp=1&sender_device=pc"
                 }
@@ -32,7 +46,13 @@
                     "Nombre":"Un pequeño adelanto",
                     "url":"../assets/img/ins1.jpg",
                     "Imagenvideo":"../assets/img/ins1.jpg"
-                    
+                },
+                {
+                    "id":2,
+                    "Subcategoria":"Arte",
+                    "Nombre":"Un pequeño adelanto 2",
+                    "url":"../assets/img/ins1.jpg",
+                    "Imagenvideo":"../assets/img/ins1.jpg"
                 }
             ],
             "Twitch":[
@@ -61,6 +81,13 @@
                     "id" : 4,   
                     "Subcategoria":"Otros",
                     "Nombre":"Reacciones XD",
+                    "url":"https://www.twitch.tv/videos/1046341565",
+                    "Imagenvideo":"https://static-cdn.jtvnw.net/cf_vods/d1m7jfoe9zdc1j/f92cae27548ca3860ad2_mife20_24926864585_9932364787//thumb/thumb1019814647-320x180.jpg"
+                },
+                {
+                    "id" : 5,   
+                    "Subcategoria":"Otros",
+                    "Nombre":"Reacciones XD +2",
                     "url":"https://www.twitch.tv/videos/1046341565",
                     "Imagenvideo":"https://static-cdn.jtvnw.net/cf_vods/d1m7jfoe9zdc1j/f92cae27548ca3860ad2_mife20_24926864585_9932364787//thumb/thumb1019814647-320x180.jpg"
                 }
