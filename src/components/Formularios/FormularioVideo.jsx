@@ -133,14 +133,14 @@ const FormularioVideo = (props) => {
                 Twitch(uuid(),Nombre.value,url.value,ImagenVideo.value,Descripcion.value)
             }
             if(Categoria === "Instagram"){
-                const Instagram = async (id,Nombre,url,ImagenVideo,Descripcion) =>{
+                const Instagram = async (id,Nombre,url,Imagenvideo,Descripcion) =>{
                     const {Instagram} = await Axios.post(
                         "http://localhost:5000/Instagram",
                         {
                             id,
                             Nombre,
                             url,
-                            ImagenVideo,
+                            Imagenvideo,
                             Descripcion
                         }
                     )

@@ -4,34 +4,55 @@
       "id": 1,
       "Subcategoria": "Limbo",
       "Nombre": "Vamos por partes",
-      "Imagenvideo": "https://i.ytimg.com/an_webp/iiEmkhtidyo/mqdefault_6s.webp?du=3000&sqp=CKjM6aMG&rs=AOn4CLDkVWRzSi0mrJpOOsb8rgdYjqMu-g",
+      "Imagenvideo": "https://i9.ytimg.com/vi_webp/iiEmkhtidyo/mqdefault.webp?v=61521a3d&sqp=CLib-6MG&rs=AOn4CLBpTu3GI31T85yEEzIN0dAU5yMHZw",
       "url": "https://www.youtube.com/watch?v=iiEmkhtidyo"
     },
     {
       "id": 2,
       "Subcategoria": "Alien: Isolation",
       "Nombre": "ME HAS MIRADO A LOS OJOS...",
-      "Imagenvideo": "https://i.ytimg.com/an_webp/Vkqf4WGE5Ws/mqdefault_6s.webp?du=3000&sqp=CPXe1aMG&rs=AOn4CLAGqoaz0_-YH719z9MUSmyzVh1LCQ",
+      "Imagenvideo": "https://i9.ytimg.com/vi_webp/Vkqf4WGE5Ws/mqdefault.webp?v=61514713&sqp=CLib-6MG&rs=AOn4CLBJIaSyle8ByN0Z2Vdo_z9NVuLqMw",
       "url": "https://www.youtube.com/watch?v=Vkqf4WGE5Ws"
     },
     {
       "id": 3,
-      "Subcategoria": "Alien: Isolation",
-      "Nombre": "ME HAS MIRADO",
-      "Imagenvideo": "https://i.ytimg.com/an_webp/Vkqf4WGE5Ws/mqdefault_6s.webp?du=3000&sqp=CPXe1aMG&rs=AOn4CLAGqoaz0_-YH719z9MUSmyzVh1LCQ",
-      "url": "https://www.youtube.com/watch?v=Vkqf4WGE5Ws"
+      "Subcategoria": "Limbo",
+      "Nombre": "APRENDEREMOS A NADAR?!",
+      "Imagenvideo": "https://i9.ytimg.com/vi_webp/cbl7IzDJJ0o/mqdefault.webp?v=6151436f&sqp=CLib-6MG&rs=AOn4CLBOFPNlnboP_qkRZdaKWGt0N8SGNQ",
+      "url": "https://www.youtube.com/watch?v=cbl7IzDJJ0o"
     },
     {
       "id": "6d0d1d51-bc0b-4b0f-aace-e91e8c049b8b",
-      "Nombre": "https://www.youtube.com",
-      "url": "https://www.youtube.com",
-      "ImagenVideo": "https://www.youtube.com",
+      "Nombre": "La Guarida Pt2",
+      "url": "https://www.youtube.com/watch?v=Zqd4dzTHzOE",
+      "Imagenvideo": "https://i9.ytimg.com/vi/Zqd4dzTHzOE/mqdefault.jpg?v=6146d76d&sqp=CLib-6MG&rs=AOn4CLAEHAKKdeD-A30WT7U1a5JzCQqPig",
       "Descripcion": "https://www.youtube.com"
+    },
+    {
+      "id": "ca360b84-6964-4536-b48d-4ae63fd523b1",
+      "Nombre": "La Guarida Pt1",
+      "url": "https://www.youtube.com/watch?v=kadbSndqxbY",
+      "ImagenVideo": "https://i9.ytimg.com/vi_webp/kadbSndqxbY/mqdefault.webp?v=6146c607&sqp=CLib-6MG&rs=AOn4CLBBolSrB4PeXWGWHhagrhuGYK-Rzg",
+      "Descripcion": "Primera parte de la guarida"
     }
   ],
   "Tiktok": [
     {
       "id": 1,
+      "Subcategoria": "Valorant",
+      "Nombre": "Alguien dijo 13",
+      "Imagenvideo": "https://p16-sign-va.tiktokcdn.com/tos-maliva-p-0068/oMeEQbh8wQcRnWjQBAIDACBJIBveIzv9jNHKEt~tplv-f5insbecw7-1:480:480.jpeg?x-expires=1686052800&x-signature=FznjM2eg5og77LjKS5FIKacgIGo%3D",
+      "url": "https://www.tiktok.com/@mife.20/video/7187201705807842566?is_from_webapp=1&sender_device=pc"
+    },
+    {
+      "id": 2,
+      "Subcategoria": "Valorant",
+      "Nombre": "Alguien dijo 13",
+      "Imagenvideo": "https://p16-sign-va.tiktokcdn.com/tos-maliva-p-0068/oMeEQbh8wQcRnWjQBAIDACBJIBveIzv9jNHKEt~tplv-f5insbecw7-1:480:480.jpeg?x-expires=1686052800&x-signature=FznjM2eg5og77LjKS5FIKacgIGo%3D",
+      "url": "https://www.tiktok.com/@mife.20/video/7187201705807842566?is_from_webapp=1&sender_device=pc"
+    },
+    {
+      "id": 3,
       "Subcategoria": "Valorant",
       "Nombre": "Alguien dijo 13",
       "Imagenvideo": "https://p16-sign-va.tiktokcdn.com/tos-maliva-p-0068/oMeEQbh8wQcRnWjQBAIDACBJIBveIzv9jNHKEt~tplv-f5insbecw7-1:480:480.jpeg?x-expires=1685786400&x-signature=B8%2BrD%2BDs6UYlJNlL0FaRdA74JAk%3D",
@@ -48,6 +69,13 @@
     },
     {
       "id": 2,
+      "Subcategoria": "Arte",
+      "Nombre": "Un pequeño adelanto 2",
+      "url": "../assets/img/ins1.jpg",
+      "Imagenvideo": "../assets/img/ins1.jpg"
+    },
+    {
+      "id": 3,
       "Subcategoria": "Arte",
       "Nombre": "Un pequeño adelanto 2",
       "url": "../assets/img/ins1.jpg",
