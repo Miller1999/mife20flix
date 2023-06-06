@@ -22,6 +22,7 @@ const StlyedForm = styled.form`
 
 const FormularioVideo = (props) => {
     //Declaraciones
+    const {Categorias,setCategorias} = props
     const [Nombre,setNombre] = useState({
         value:"",
         valid: null
@@ -204,6 +205,8 @@ const FormularioVideo = (props) => {
             id="categoria"
             valor={Categoria}
             setValue={setCategoria}
+            Categorias={Categorias}
+            setCategorias={setCategorias}
             />
             <CampoTexto 
             id="descripcion"

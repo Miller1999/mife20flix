@@ -4,7 +4,10 @@ import Boton from "../Button/Boton";
 import React from 'react'
 import { MuiColorInput } from 'mui-color-input'
 import { ColorFormularios, StyledP } from "../../Global";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { buscarC,apiC } from "../../api/api";
+import Axios from "axios";
+import {v4 as uuid} from "uuid"
 
 
 const DivModificado = styled.div`
@@ -33,6 +36,14 @@ const ModP = styled(StyledP)`
 `
 
 const FormularioCategoria = (props) => {
+    const {Categorias,setCategorias} = props
+    useEffect(()=>{
+        buscarC(apiC.baseURL,(response) =>{
+            console.log(response)
+            setCategorias(response)
+            console.log("Esta es la lista:", Categorias)
+        })
+    },[setCategorias])
     const [value, setValue] = useState('#ffffff')
     const [TituloC,setTituloC] = useState({
         value:"",
@@ -81,14 +92,22 @@ const FormularioCategoria = (props) => {
         }
         const envio = (e) => {
             e.preventDefault()
-            var datos = {
-                value,
-                TituloC,
-                DescripcionC,
-                codigoC,
-            }
             if(codigoC.value === "1234"){
-                console.log(datos)
+                const Categorias = async (id,Titulo,Descripcion,color) =>{
+                    const {Categorias} = await Axios.post(
+                        "http://localhost:5000/Categorias",
+                        {
+                            id,
+                            Titulo,
+                            Descripcion,
+                            color
+                        }
+                    )
+                    console.log(Categorias)
+                }
+                Categorias(uuid(),TituloC.value,DescripcionC.value,value)
+                console.log("Si fue enviado")
+                setInterval(()=>{window.location.href="http://localhost:3000/NuevaCategoria"},1000)
             }
             else{
                 console.log("codigo incorrecto")

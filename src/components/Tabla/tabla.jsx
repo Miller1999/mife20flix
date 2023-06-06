@@ -6,6 +6,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import styled from 'styled-components';
 import Boton from '../Button/Boton';
+import { useState,useEffect } from 'react';
+import { buscarC,apiC } from '../../api/api';
 
 const DivC = styled.div`
     display:flex;
@@ -13,19 +15,28 @@ const DivC = styled.div`
     align-items:center;
     margin:100px;
 `
-
+export default function BasicTable(props) {
+    const {Categorias,setCategorias} = props
+    useEffect(()=>{
+        buscarC(apiC.baseURL,(response) =>{
+            console.log(response)
+            setCategorias(response)
+            console.log("Esta es la lista:", Categorias)
+        })
+    },[setCategorias])
 function createData(title, descripcion, edit, remove) {
 return { title, descripcion, edit, remove };
 }
 
-const rows = [
-createData('Youtube', "Videos en youtube", "Editar", "Remover"),
-createData('TikTok', "Videos en tiktok", "Editar", "Remover"),
-createData('Twitch', "Videos en twitch", "Editar", "Remover"),
-createData('Instagram', "Imagenes de instagram", "Editar", "Remover"),
-];
-
-export default function BasicTable() {
+function row1(){
+    const info = Categorias.map((item) => (
+        createData(item.Titulo,item.Descripcion,"Edit","Remove")
+    ))
+    console.log("Esta es la info",info)
+    return info
+}
+const informacion = row1()
+console.log("Esta es la informacion",informacion)
 return (
     <DivC>
         <TableContainer>
@@ -39,7 +50,7 @@ return (
             </TableRow>
             </TableHead>
             <TableBody>
-            {rows.map((row) => (
+            {informacion.map((row) => (
                 <TableRow
                 key={row.title}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}

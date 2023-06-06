@@ -17,6 +17,10 @@ export const apiI = axios.create({
     baseURL:"http://localhost:5000/Instagram"
 })
 
+export const apiC = axios.create({
+    baseURL:"http://localhost:5000/Categorias"
+})
+
 export const buscarY = async (url,setData) => {
         const respuesta = await apiY.get(url)
         setData(respuesta.data)
@@ -34,5 +38,10 @@ export const buscarTw = async (url,setData) => {
 
 export const buscarI = async (url,setData) => {
     const respuesta = await apiI.get(url)
+    setData(respuesta.data)
+}
+
+export const buscarC = async (url,setData) => {
+    const respuesta = await apiC.get(url)
     setData(respuesta.data)
 }

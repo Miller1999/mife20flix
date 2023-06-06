@@ -6,6 +6,8 @@ import {v4 as uuid} from "uuid"
 import { ModDiv } from '../CampoTexto/CampoTexto';
 import {theme} from "../CampoTexto/CampoTexto"
 import { ThemeProvider } from '@mui/material/styles';
+import { useEffect } from 'react';
+import { buscarC,apiC } from '../../api/api';
 
 const Categoria = [
     {
@@ -27,7 +29,14 @@ const Categoria = [
 ]
 
 const Selector = (props) => {
-    const {setValue,valor} = props
+    const {setValue,valor,Categorias,setCategorias} = props
+    useEffect(()=>{
+        buscarC(apiC.baseURL,(response) =>{
+            console.log(response)
+            setCategorias(response)
+            console.log("Esta es la lista:", Categorias)
+        })
+    },[setCategorias])
     const cambio = (e)=> {
         setValue(e.target.value)
     }
@@ -43,8 +52,8 @@ const Selector = (props) => {
                 value={valor}
                 onChange={cambio}
                 >
-                {Categoria.map((categoria) => (
-                    <MenuItem key={categoria.id} value={categoria.titulo}>{categoria.titulo}</MenuItem>
+                {Categorias.map((categoria) => (
+                    <MenuItem key={categoria.id} value={categoria.Titulo}>{categoria.Titulo}</MenuItem>
                 ))}
                 </Select>
             </FormControl>

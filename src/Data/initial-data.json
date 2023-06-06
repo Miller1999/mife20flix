@@ -83,5 +83,23 @@
       "url": "https://www.twitch.tv/videos/1046341565",
       "Imagenvideo": "https://static-cdn.jtvnw.net/cf_vods/d1m7jfoe9zdc1j/f92cae27548ca3860ad2_mife20_24926864585_9932364787//thumb/thumb1019814647-320x180.jpg"
     }
+  ],
+  "Categorias": [
+    {
+      "id": 1,
+      "Titulo": "Youtube",
+      "Descripcion": "Aqui subo los videos de youtube"
+    },
+    {
+      "id": 2,
+      "Titulo": "TikTok",
+      "Descripcion": "Aqui subo los videos de tiktok"
+    },
+    {
+      "id": "16a91d94-7664-4d3f-b610-e80d6de32413",
+      "Titulo": "Instagram",
+      "Descripcion": "Subo dibujos desde instagram",
+      "color": "rgb(203, 116, 225)"
+    }
   ]
 }
