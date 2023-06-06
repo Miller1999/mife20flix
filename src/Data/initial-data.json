@@ -82,6 +82,13 @@
       "Nombre": "Reacciones XD +2",
       "url": "https://www.twitch.tv/videos/1046341565",
       "Imagenvideo": "https://static-cdn.jtvnw.net/cf_vods/d1m7jfoe9zdc1j/f92cae27548ca3860ad2_mife20_24926864585_9932364787//thumb/thumb1019814647-320x180.jpg"
+    },
+    {
+      "id": "774dee2c-3356-4260-953d-fed4c25abc9b",
+      "Nombre": "https://www.youtube.com",
+      "url": "https://www.youtube.com",
+      "ImagenVideo": "https://www.youtube.com",
+      "Descripcion": "https://www.youtube.com"
     }
   ],
   "Categorias": [
@@ -100,6 +107,12 @@
       "Titulo": "Instagram",
       "Descripcion": "Subo dibujos desde instagram",
       "color": "rgb(203, 116, 225)"
+    },
+    {
+      "id": "ff441505-56fd-42bd-ae94-040971ce8455",
+      "Titulo": "Twitch",
+      "Descripcion": "Aqui subo los videos de twitch",
+      "color": "#ffffff"
     }
   ]
 }

@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import Boton from '../Button/Boton';
 import { useState,useEffect } from 'react';
 import { buscarC,apiC } from '../../api/api';
+import Axios from 'axios';
 
 const DivC = styled.div`
     display:flex;
@@ -24,13 +25,13 @@ export default function BasicTable(props) {
             console.log("Esta es la lista:", Categorias)
         })
     },[setCategorias])
-function createData(title, descripcion, edit, remove) {
-return { title, descripcion, edit, remove };
+function createData(title, descripcion, edit, remove,id,color) {
+return { title, descripcion, edit, remove,id,color };
 }
 
 function row1(){
     const info = Categorias.map((item) => (
-        createData(item.Titulo,item.Descripcion,"Edit","Remove")
+        createData(item.Titulo,item.Descripcion,"Edit","Remove",item.id,item.color)
     ))
     console.log("Esta es la info",info)
     return info
@@ -57,8 +58,29 @@ return (
                 >
                 <TableCell component="th" scope="row">{row.title}</TableCell>
                 <TableCell align="center">{row.descripcion}</TableCell>
-                <TableCell align="center"><Boton type="button">{row.edit}</Boton></TableCell>
-                <TableCell align="center"><Boton type="button">{row.remove}</Boton></TableCell>
+                <TableCell align="center"><Boton type="button" onClick={() => {
+                    const Data = async(id,Titulo,Descripcion,color) => {
+                        const {data } = await Axios.put(
+                            `http://localhost:5000/Categorias/${row.id}`,
+                            {
+                                id,
+                                Titulo,
+                                Descripcion,
+                                color
+                            }
+                        )
+                    }
+                    Data(row.id,row.title,row.descripcion,row.color)
+                }}>{row.edit}</Boton></TableCell>
+                <TableCell align="center"><Boton type="button" onClick={() => {
+                    const Data = async id => {
+                        const {data} = await Axios.delete(
+                            `http://localhost:5000/Categorias/${row.id}`
+                        )
+                        console.log(data)
+                    }
+                    Data(row.id)
+                }}>{row.remove}</Boton></TableCell>
                 </TableRow>
             ))}
             </TableBody>

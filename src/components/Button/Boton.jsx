@@ -20,11 +20,7 @@ export const EstiloBoton = styled.button`
     }
 `
 const Boton = (props) => {
-    
-    if(props.type === "reset"){
-        return <EstiloBoton type={props.type} onClick={props.onClick}>{props.children}</EstiloBoton>
-    }
-    return <EstiloBoton type={props.type} >{props.children}</EstiloBoton>
+    return <EstiloBoton type={props.type} onClick={props.onClick}>{props.children}</EstiloBoton>
 }
 
 export default Boton
